@@ -5,6 +5,40 @@ public class Matrix {
     // matrix.length - row
     // matrix[0].length - column
 
+    public static Matrix rotX(double angle) {
+        return new Matrix(new double[][]{{1, 0, 0, 0},
+                {0, Math.cos(Math.toRadians(angle)), -Math.sin(Math.toRadians(angle)), 0},
+                {0, Math.sin(Math.toRadians(angle)), Math.cos(Math.toRadians(angle)), 0},
+                {0, 0, 0, 1}});
+    }
+
+    public static Matrix rotY(double angle) {
+        return new Matrix(new double[][]{{Math.cos(Math.toRadians(angle)), 0, Math.sin(Math.toRadians(angle)), 0},
+                {0, 1, 0, 0},
+                {-Math.sin(Math.toRadians(angle)), 0, Math.cos(Math.toRadians(angle)), 0},
+                {0, 0, 0, 1}});
+    }
+
+    public static Matrix rotZ(double angle) {
+        return new Matrix(new double[][]{{Math.cos(Math.toRadians(angle)), -Math.sin(Math.toRadians(angle)), 0, 0},
+                {Math.sin(Math.toRadians(angle)), Math.cos(Math.toRadians(angle)), 0, 0},
+                {0, 0, 1, 0},
+                {0, 0, 0, 1}});
+    }
+
+    public static Matrix move(double x, double y, double z) {
+        return new Matrix(new double[][]{{1, 0, 0, x},
+                {0, 1, 0, y},
+                {0, 0, 1, z},
+                {0, 0, 0, 1}});
+    }
+
+    public static Matrix scale(double x, double y, double z) {
+        return new Matrix(new double[][]{{x, 0, 0, 0},
+                {0, y, 0, 0},
+                {0, 0, z, 0},
+                {0, 0, 0, 1}});
+    }
 
     public Matrix(double[][] matrix) {
         this.matrix = matrix;

@@ -13,16 +13,16 @@ public class MainFrame {
     }
 
     void display() {
-        frame = new JFrame("3D test");
+        frame = new JFrame("3D Tetris");
         frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        Viewer3D viewer3D = new Viewer3D();
-        viewer3D.setFocusable(true);
-        viewer3D.grabFocus();
+        Game game = new Game();
+        game.setFocusable(true);
+        game.grabFocus();
 
-        frame.add(viewer3D, BorderLayout.CENTER);
+        frame.add(game, BorderLayout.CENTER);
 
         frame.setVisible(true);
     }

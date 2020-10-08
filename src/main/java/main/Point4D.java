@@ -8,6 +8,14 @@ public class Point4D {
 
     public Point4D() {
     }
+
+    public Point4D(Point4D point) {
+        this.x = point.x;
+        this.y = point.y;
+        this.z = point.z;
+        this.w = point.w;
+    }
+
     public Point4D(double x, double y, double z) {
         this.x = x;
         this.y = y;
